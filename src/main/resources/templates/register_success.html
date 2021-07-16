@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>To-do List</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    </head>
+
+    <body>
+        <img class="wave" src="img/wave.png">
+        <div class="container">
+            <div class="img">
+                <img src="img/illustration.svg">
+            </div>
+            <div class="login-container">
+                <form action="#" th:action="@{/login}" method="POST">
+               		<img class="profile" src="img/profile.svg">
+                    <h2>Welcome</h2>
+                    <div class="alert success">
+                		<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>  
+                		<strong>Registered Successfully!</strong>
+            		</div>
+                    <div class="input-div one">
+                        <div class="i">
+                            <i class="fas fa-envelope">                                
+                            </i>
+                        </div>
+                        <div >
+                            <h5>Email</h5>
+                            <input class="input" type="email" required>
+                        </div>
+                    </div>
+                    <div class="input-div two">
+                        <div class="i">
+                            <i class="fas fa-lock">                                
+                            </i>
+                        </div>
+                        <div >
+                            <h5>Password</h5>
+                            <input class="input" type="password" required>
+                        </div>
+                    </div>
+                    <input type="submit" class="btn" value="Login">
+                    <a href="/register">New User? Register!</a>
+                </form>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/main.js"></script>
+        
+    </body>
+</html>
+<style>
+    .wave{
+        position: fixed;
+        height: 100%;
+        left: 0;
+        bottom:0;
+        z-index:-1;
+        }
+    .container{
+        padding: 0 2rem;
+    }
+    .alert {
+  		padding: 5px;
+  		background-color: #f44336;
+  		color: white;
+  		opacity: 1;
+  		transition: opacity 0.6s;
+  		margin-bottom: 3px;
+	}
+
+	.alert.success {background-color: #04AA6D;}
+	
+	.closebtn {
+  		margin-left: 3px;
+  		color: white;
+  		font-weight: bold;
+  		float: right;
+  		font-size: 20px;
+  		line-height: 20px;
+  		cursor: pointer;
+  		transition: 0.3s;
+	}
+
+	.closebtn:hover {
+  		color: black;
+	}
+</style>

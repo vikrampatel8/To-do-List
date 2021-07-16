@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    
+    <head>
+        <title>To-do List</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/style1.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    </head>
+
+    <body>
+        <nav>
+            <input id="nav-toggle" type="checkbox">
+            <div class="logo">To-do</div>
+            <ul class="links">
+                <li><a href="/home">Home</a></li>
+                <li><a href="/add-todo">Add Task</a></li>
+                <li><a href="#contactus">Contact Us</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+            <label for="nav-toggle" class="icon-burger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </label>
+        </nav>
+
+        <div class="container">
+            <div class="title">Update To-do</div>
+            <form th:action="@{/update-todo}" method="post" th:object="${todo}">
+                <div class="todo-details">
+                <input type="hidden" th:value="${todo.id}" th:field="*{id}">
+                    <div class="input-box">
+                        <span class="details">Title</span>
+                        <input th:field="*{title}" type="text" placeholder="Enter the title" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Description</span>
+                        <input th:field="*{description}" type="text" placeholder="Enter the description" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Link</span>
+                        <input th:field="*{link}" type="text" placeholder="Enter the link" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Deadline</span>
+                        <input th:field="*{targetDate}" type="text" placeholder="Enter the dealine(dd/mm/yyy)" required>
+                    </div>
+                </div>
+                <div class="button">
+                    <input type="submit" value="Update Task">
+                </div>
+            </form>
+        </div>
+
+        <footer>
+            <div class="container1">
+                <div class="sec aboutus">
+                    <h2>About Us</h2>
+                    <p>We are students of jssateb, working on this project to enhance, develop and implement our skills learnt in the C2tc . This Spring boot application will help you to stay on track and manage your time efficiently.</p>
+                </div>
+                <div class="sec contact" id="contactus">
+                    <h2>Contact Us</h2>
+                    <ul class="info">
+                        <li>
+                            <span><i class="fas fa-envelope"></i></span>
+                            <p><a href="mailto:sakshaprakash636@gmail.com">Saksha Prakash</a></p>
+                        </li>
+                        <li>
+                            <span><i class="fas fa-envelope"></i></span>
+                            <p><a href="mailto:vibhapatil1330@gmail.com">Vibha Patil</a></p>
+                        </li>
+                        <li>
+                            <span><i class="fas fa-envelope"></i></span>
+                            <p><a href="mailto:vikramnpatel5@gmail.com">Vikram Patel</a></p>
+                        </li>
+                        <li>
+                            <span><i class="fas fa-envelope"></i></span>
+                            <p><a href="mailto:vyshnavinaidu2109@gmail.com">Vyshnavi C</a></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <div class="copyrightText">
+            <p>Copyright &copy; 2021. All Rights Reserved.</p>
+        </div>
+       
+    </body>
+
+</html>
